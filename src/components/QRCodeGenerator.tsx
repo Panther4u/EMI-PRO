@@ -26,6 +26,7 @@ import { useDevice } from '@/context/DeviceContext';
 import { useAuth } from '@/context/AuthContext';
 // import { Customer } from '@/types/customer'; // Not strictly needed unless used
 import { useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '@/config';
 
 const brandModelMap: Record<string, string[]> = {
   "Samsung": [
@@ -258,12 +259,13 @@ export const QRCodeGenerator = () => {
     }
   };
 
+
   const getQRData = () => {
     // Create enrollment data object
     const enrollmentData = {
       type: 'DEVICE_ENROLLMENT',
-      serverUrl: window.location.origin,
-      apkUrl: `${window.location.origin}/SecureFinance_EMI_App.apk`,
+      serverUrl: API_BASE_URL,
+      apkUrl: `${API_BASE_URL}/SecureFinance_EMI_App.apk`,
       customerId: `CUST${Date.now().toString().slice(-6)}`,
       customerName: formData.customerName,
       phoneNo: formData.phoneNo,
@@ -283,7 +285,7 @@ export const QRCodeGenerator = () => {
     const provisioningData = {
       "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME": "com.securefinance.emilock/.AdminReceiver",
       "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM": "bnVsbA==", // 'null' in base64 (for dev/unsigned) or calculate real checksum
-      "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION": `${window.location.origin}/SecureFinance_EMI_App.apk`,
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION": `${API_BASE_URL}/SecureFinance_EMI_App.apk`,
       "android.app.extra.PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED": true,
       "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE": enrollmentData
     };
