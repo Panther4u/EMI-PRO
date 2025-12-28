@@ -278,13 +278,18 @@ export const QRCodeGenerator = () => {
       enrollmentDate: new Date().toISOString(),
     };
 
-    // Encode the enrollment data
-    const encodedData = btoa(JSON.stringify(enrollmentData));
+    // PROVISIONING JSON (Android Enterprise)
+    // This format is required to assume Device Owner privileges via QR provisioning
+    const provisioningData = {
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME": "com.securefinance.emilock/.AdminReceiver",
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM": "bnVsbA==", // 'null' in base64 (for dev/unsigned) or calculate real checksum
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION": `${window.location.origin}/SecureFinance_EMI_App.apk`,
+      "android.app.extra.PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED": true,
+      "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE": enrollmentData
+    };
 
-    // Create the enrollment URL that mobile simulator will use
-    const enrollmentUrl = `${window.location.origin}/mobile-simulator/${formData.imei1}?enrollment=${encodedData}`;
-
-    return enrollmentUrl;
+    // Return the JSON string directly
+    return JSON.stringify(provisioningData);
   };
 
   const qrData = getQRData();

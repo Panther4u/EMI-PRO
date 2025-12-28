@@ -33,7 +33,13 @@ const MobileSimulator = () => {
         const enrollmentData = params.get('enrollment');
         if (enrollmentData && !isEnrolled && setupStep === 'power-off') {
             try {
-                const decoded = JSON.parse(atob(enrollmentData));
+                let decoded = JSON.parse(atob(enrollmentData));
+
+                // Check if this is a Provisioning Bundle and extract the inner data
+                if (decoded["android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE"]) {
+                    decoded = decoded["android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE"];
+                }
+
                 console.log('Enrollment Data:', decoded);
                 setSetupStep('scanning');
                 // Automatically move to installing after a brief pause
