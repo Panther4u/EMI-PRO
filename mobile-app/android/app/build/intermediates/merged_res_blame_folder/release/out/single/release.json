@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable_ic_launcher.xml.flat",
+        "source": "com.securefinance.emilock.app-main-22:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-xxxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-xxxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-hdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-hdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-xhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-xhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-xxhdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-xxhdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/xml_device_admin.xml.flat",
+        "source": "com.securefinance.emilock.app-main-22:/xml/device_admin.xml"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backiconmask.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backiconmask.png"
+    },
+    {
+        "merged": "com.securefinance.emilock.app-merged_res-21:/drawable-mdpi_node_modules_reactnavigation_elements_src_assets_backicon.png.flat",
+        "source": "com.securefinance.emilock.app-res-16:/drawable-mdpi/node_modules_reactnavigation_elements_src_assets_backicon.png"
+    }
+]

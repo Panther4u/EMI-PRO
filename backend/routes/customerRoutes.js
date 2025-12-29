@@ -56,6 +56,32 @@ router.patch('/:id', async (req, res) => {
     }
 });
 
+// Verify device IMEI and status
+router.post('/:id/verify', async (req, res) => {
+    try {
+        const { imei1, imei2 } = req.body;
+        const customer = await Customer.findOne({ id: req.params.id });
+
+        if (!customer) {
+            return res.status(404).json({ message: 'Customer not found' });
+        }
+
+        // Verify IMEI
+        const imeiMatches = customer.imei1 === imei1;
+
+        if (imeiMatches) {
+            customer.isVerified = true;
+            customer.isEnrolled = true;
+            await customer.save();
+            res.json({ success: true, message: 'Device verified and bound successfully', customer });
+        } else {
+            res.status(400).json({ success: false, message: 'IMEI mismatch. Verification failed.' });
+        }
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 // Delete a customer
 router.delete('/:id', async (req, res) => {
     try {

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SecureFinance EMI</string>
+    <string name="device_admin_description">This app requires administrator permissions to manage device security policies and EMI compliance.</string>
+</resources>

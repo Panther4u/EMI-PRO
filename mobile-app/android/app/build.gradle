@@ -2,10 +2,13 @@ apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
 android {
-    ndkVersion rootProject.ext.ndkVersion
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     namespace "com.securefinance.emilock"
+    buildFeatures {
+        buildConfig true
+    }
+
     defaultConfig {
         applicationId "com.securefinance.emilock"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -38,9 +41,20 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
             minifyEnabled true
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            jvmTarget = "11"
         }
     }
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useAuth } from '@/context/AuthContext';
+import { useAuth, AdminAccount } from '@/context/AuthContext';
 import { Shield, Lock, Delete, User, Key, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -14,13 +14,13 @@ const Login = () => {
     const [newPin, setNewPin] = useState('');
     const [confirmPin, setConfirmPin] = useState('');
     const [error, setError] = useState(false);
-    const [pendingAdmin, setPendingAdmin] = useState<any>(null);
+    const [pendingAdmin, setPendingAdmin] = useState<AdminAccount | null>(null);
 
     const { login, loginWithPasskey, activateAdmin, isAuthenticated, isAdminLocked, admins } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
 
-    const from = (location.state as any)?.from?.pathname || "/";
+    const from = (location.state as { from?: { pathname: string } })?.from?.pathname || "/";
 
     useEffect(() => {
         if (isAuthenticated) {
@@ -44,7 +44,7 @@ const Login = () => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [pin, mode]);
+    }, [pin, mode]); // eslint-disable-line react-hooks/exhaustive-deps
 
     const handleNumberClick = (num: string) => {
         if (pin.length < 6) {

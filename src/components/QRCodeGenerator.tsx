@@ -5,7 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
   QrCode, Download, Copy, CheckCircle, CreditCard,
-  ChevronDown, Check, ChevronsUpDown, User, Phone, FileText, MapPin, IndianRupee, Calendar
+  ChevronDown, Check, ChevronsUpDown, User, Phone, FileText, MapPin, IndianRupee, Calendar,
+  type LucideIcon
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
@@ -24,7 +25,7 @@ import {
 } from "@/components/ui/popover";
 import { useDevice } from '@/context/DeviceContext';
 import { useAuth } from '@/context/AuthContext';
-// import { Customer } from '@/types/customer'; // Not strictly needed unless used
+import { Customer } from '@/types/customer';
 import { useNavigate } from 'react-router-dom';
 import { API_BASE_URL } from '@/config';
 
@@ -112,6 +113,8 @@ interface QRFormData {
   totalAmount: string; // Changed to string for input handling
   emiAmount: string;   // Changed to string for input handling
   totalEmis: string;   // Changed to string for input handling
+  wifiSSID?: string;
+  wifiPassword?: string;
 }
 
 interface InputFieldProps {
@@ -122,7 +125,7 @@ interface InputFieldProps {
   placeholder: string;
   required?: boolean;
   id?: string;
-  icon?: any;
+  icon?: LucideIcon;
   type?: string;
   maxLength?: number;
   step?: string;
@@ -180,6 +183,8 @@ export const QRCodeGenerator = () => {
     totalAmount: '',
     emiAmount: '',
     totalEmis: '',
+    wifiSSID: '',
+    wifiPassword: '',
   });
   const [qrGenerated, setQrGenerated] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -196,10 +201,10 @@ export const QRCodeGenerator = () => {
   }, []);
 
   const generateQR = async () => {
-    if (!formData.customerName || !formData.phoneNo || !formData.imei1 || !formData.deviceName || !formData.mobileModel) {
+    if (!formData.customerName || !formData.phoneNo || !formData.imei1 || !formData.imei2) {
       toast({
         title: 'Missing Information',
-        description: 'Please fill in all required fields',
+        description: 'Please fill in all required fields (Name, Phone, IMEI 1 & 2)',
         variant: 'destructive',
       });
       return;
@@ -219,7 +224,7 @@ export const QRCodeGenerator = () => {
     try {
       // Construct Customer Object
       const newId = `CUST${Date.now().toString().slice(-6)}`; // Simple ID generation
-      const customerData: any = {
+      const customerData: Customer = {
         id: newId,
         name: formData.customerName,
         phoneNo: formData.phoneNo,
@@ -237,7 +242,8 @@ export const QRCodeGenerator = () => {
         emiDate: new Date().getDate(),
         isLocked: false,
         location: { lat: 0, lng: 0, lastUpdated: new Date().toISOString() },
-        status: 'active'
+        lockHistory: [],
+        createdAt: new Date().toISOString()
       };
 
       await addCustomer(customerData);
@@ -278,17 +284,43 @@ export const QRCodeGenerator = () => {
       emiAmount: formData.emiAmount,
       totalEmis: formData.totalEmis,
       enrollmentDate: new Date().toISOString(),
+      // New restrictions (defaulting to enabled/restricted if needed, or based on future settings)
+      restrictions: {
+        network: true,
+        wifi: true,
+        camera: true,
+        calls: true,
+        messages: true,
+        notifications: true,
+        powerOff: true,
+        reset: true,
+        pinChange: true,
+        factoryReset: true,
+        location: true,
+        email: true,
+        airplaneMode: true,
+        withoutNetwork: true
+      },
+      wifiSSID: formData.wifiSSID,
+      wifiPassword: formData.wifiPassword
     };
 
-    // PROVISIONING JSON (Android Enterprise)
-    // This format is required to assume Device Owner privileges via QR provisioning
-    const provisioningData = {
-      "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME": "com.securefinance.emilock/.AdminReceiver",
-      "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM": "bnVsbA==", // 'null' in base64 (for dev/unsigned) or calculate real checksum
+    const provisioningData: any = {
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_COMPONENT_NAME": "com.securefinance.emilock/.DeviceAdminReceiver",
+      "android.app.extra.PROVISIONING_DEVICE_ADMIN_SIGNATURE_CHECKSUM": "bnVsbA==", // 'null' in base64
       "android.app.extra.PROVISIONING_DEVICE_ADMIN_PACKAGE_DOWNLOAD_LOCATION": `${API_BASE_URL}/SecureFinance_EMI_App.apk`,
       "android.app.extra.PROVISIONING_LEAVE_ALL_SYSTEM_APPS_ENABLED": true,
-      "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE": enrollmentData
+      "android.app.extra.PROVISIONING_ADMIN_EXTRAS_BUNDLE": enrollmentData,
+      "android.app.extra.PROVISIONING_SKIP_ENCRYPTION": true
     };
+
+    if (formData.wifiSSID) {
+      provisioningData["android.app.extra.PROVISIONING_WIFI_SSID"] = formData.wifiSSID;
+      provisioningData["android.app.extra.PROVISIONING_WIFI_SECURITY_TYPE"] = "WPA";
+      if (formData.wifiPassword) {
+        provisioningData["android.app.extra.PROVISIONING_WIFI_PASSWORD"] = formData.wifiPassword;
+      }
+    }
 
     // Return the JSON string directly
     return JSON.stringify(provisioningData);
@@ -365,7 +397,7 @@ export const QRCodeGenerator = () => {
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label className="text-sm text-muted-foreground">
-                  Device Name (Brand) <span className="text-destructive">*</span>
+                  Device Name (Brand)
                 </Label>
                 <Popover open={brandOpen} onOpenChange={setBrandOpen}>
                   <PopoverTrigger asChild>
@@ -413,7 +445,7 @@ export const QRCodeGenerator = () => {
 
               <div className="space-y-2">
                 <Label className="text-sm text-muted-foreground">
-                  Device Model <span className="text-destructive">*</span>
+                  Device Model
                 </Label>
                 <Popover open={modelOpen} onOpenChange={setModelOpen}>
                   <PopoverTrigger asChild>
@@ -476,6 +508,7 @@ export const QRCodeGenerator = () => {
                 value={formData.imei2}
                 onChange={handleInputChange}
                 placeholder="356938035643817"
+                required
                 id="imei2"
                 icon={QrCode}
                 maxLength={15}
@@ -536,12 +569,45 @@ export const QRCodeGenerator = () => {
           />
         </div>
 
+      </div>
+
+      {/* Section 3: Wireless Setup (Zero-Touch) */}
+      <div className="glass-card p-6">
+        <h2 className="text-lg font-bold text-foreground mb-6 flex items-center gap-2">
+          <Wifi className="w-5 h-5 text-primary" />
+          Wireless Setup (Zero-Touch)
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label className="text-sm text-muted-foreground">WiFi SSID (Network Name)</Label>
+            <Input
+              value={formData.wifiSSID}
+              onChange={(e) => handleInputChange('wifiSSID', e.target.value)}
+              placeholder="e.g. Office_WiFi"
+              className="bg-secondary/50 border-border/50"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label className="text-sm text-muted-foreground">WiFi Password</Label>
+            <Input
+              value={formData.wifiPassword}
+              onChange={(e) => handleInputChange('wifiPassword', e.target.value)}
+              placeholder="Optional"
+              type="password"
+              className="bg-secondary/50 border-border/50"
+            />
+          </div>
+        </div>
+        <p className="text-[10px] text-muted-foreground mt-4 italic">
+          * Providing WiFi details allows the device to automatically connect during the setup process.
+        </p>
+
         <Button
           onClick={generateQR}
           className="w-full mt-6"
         >
           <QrCode className="w-4 h-4 mr-2" />
-          Generate QR Code
+          Generate All-In-One Setup QR
         </Button>
       </div>
 

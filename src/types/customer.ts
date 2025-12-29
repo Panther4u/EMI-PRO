@@ -7,6 +7,7 @@ export interface Customer {
   imei1: string;
   imei2: string;
   mobileModel: string;
+  deviceName: string;
   financeName: string;
   totalAmount: number;
   emiAmount: number;
@@ -31,14 +32,22 @@ export interface Customer {
   documents?: string[];
   isEnrolled?: boolean;
   enrollmentToken?: string;
+  isVerified?: boolean;
   // Advanced Controls
   networkRestricted?: boolean;
   wifiRestricted?: boolean;
   cameraRestricted?: boolean;
   callsRestricted?: boolean;
+  messagesRestricted?: boolean;
   notificationsRestricted?: boolean;
   powerOffRestricted?: boolean;
   resetRestricted?: boolean;
+  pinChangeRestricted?: boolean;
+  factoryResetRestricted?: boolean;
+  locationRestricted?: boolean;
+  emailRestricted?: boolean;
+  airplaneModeRestricted?: boolean;
+  withoutNetworkRestricted?: boolean;
 }
 
 export interface LockEvent {

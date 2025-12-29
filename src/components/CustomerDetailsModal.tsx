@@ -20,7 +20,8 @@ import {
   Hash,
   Building,
   History,
-  QrCode
+  QrCode,
+  type LucideIcon
 } from 'lucide-react';
 import { QRCodeSVG } from 'qrcode.react';
 import { cn } from '@/lib/utils';
@@ -46,7 +47,7 @@ export const CustomerDetailsModal = ({
   const remainingEmis = customer.totalEmis - customer.paidEmis;
   const progress = (customer.paidEmis / customer.totalEmis) * 100;
 
-  const InfoRow = ({ icon: Icon, label, value }: { icon: any; label: string; value: string }) => (
+  const InfoRow = ({ icon: Icon, label, value }: { icon: LucideIcon; label: string; value: string }) => (
     <div className="flex items-start gap-3 py-3 border-b border-border/50 last:border-0">
       <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
         <Icon className="w-4 h-4 text-muted-foreground" />

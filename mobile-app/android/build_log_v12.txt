@@ -1,0 +1,24 @@
+Starting a Gradle Daemon, 1 incompatible and 4 stopped Daemons could not be reused, use --status for details
+> Task :gradle-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:compileKotlin FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':gradle-plugin:compileKotlin'.
+> Unable to delete directory 'C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable'
+    Failed to delete some children. This might happen because a process has files open or has its working directory set in the target directory.
+    - C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable\caches-jvm\inputs
+    - C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable\caches-jvm\jvm\kotlin
+    - C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable\caches-jvm\jvm
+    - C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable\caches-jvm\lookups
+    - C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native\gradle-plugin\build\kotlin\compileKotlin\cacheable\caches-jvm
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 51s
+2 actionable tasks: 2 executed

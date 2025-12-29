@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert, TextInput, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function SetupScreen({ navigation }) {
+export default function SetupScreen({ navigation }: { navigation: any }) {
     const [step, setStep] = useState('welcome'); // welcome, scanning, downloading
     const [tapCount, setTapCount] = useState(0);
     const [manualQrInput, setManualQrInput] = useState('');
@@ -17,7 +17,7 @@ export default function SetupScreen({ navigation }) {
         }
     };
 
-    const processEnrollmentData = (dataString) => {
+    const processEnrollmentData = (dataString: string) => {
         try {
             let enrollmentData;
 
@@ -61,12 +61,39 @@ export default function SetupScreen({ navigation }) {
         }
     };
 
-    const startSetup = (data) => {
+    const startSetup = async (data: any) => {
         setStep('downloading');
-        // Simulate download delay
-        setTimeout(() => {
-            navigation.navigate('Permissions', { enrollmentData: data });
-        }, 1500);
+
+        try {
+            // Simulate Binding & Handshake as shown in the diagram
+            // Call the verification endpoint
+            const response = await fetch(`${data.serverUrl}/api/customers/${data.customerId}/verify`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    imei1: data.imei1,
+                    imei2: data.imei2,
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                console.log('Verification Success:', result.message);
+                // Simulate download delay
+                setTimeout(() => {
+                    navigation.navigate('Permissions', { enrollmentData: data });
+                }, 1500);
+            } else {
+                throw new Error(result.message || 'Verification failed');
+            }
+        } catch (error: any) {
+            console.error("Setup Error", error);
+            Alert.alert('Setup Failed', error.message || 'Could not verify device with server.');
+            setStep('scanning');
+        }
     };
 
     const simulateScan = async () => {
@@ -94,15 +121,15 @@ export default function SetupScreen({ navigation }) {
     };
 
     // Polyfill for atob/btoa if needed in this scope
-    const atob = (input) => {
+    const atob = (input: string) => {
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-        let str = input.replace(/=+$/, '');
+        const str = input.replace(/=+$/, '');
         let output = '';
         if (str.length % 4 == 1) {
             throw new Error("'atob' failed: The string to be decoded is not correctly encoded.");
         }
         for (let bc = 0, bs = 0, buffer, i = 0;
-            buffer = str.charAt(i++);
+            (buffer = str.charAt(i++));
             ~buffer && (bs = bc % 4 ? bs * 64 + buffer : buffer,
                 bc++ % 4) ? output += String.fromCharCode(255 & bs >> (-2 * bc & 6)) : 0
         ) {
@@ -111,9 +138,9 @@ export default function SetupScreen({ navigation }) {
         return output;
     };
 
-    const btoa = (input) => {
+    const btoa = (input: string) => {
         const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-        let str = input;
+        const str = input;
         let output = '';
         for (let block = 0, charCode, i = 0, map = chars;
             str.charAt(i | 0) || (map = '=', i % 1);

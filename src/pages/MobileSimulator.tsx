@@ -108,7 +108,9 @@ const MobileSimulator = () => {
                         const decoded = JSON.parse(atob(enrollmentData));
                         // In a real app, we'd call an API here.
                         // Here we just simulate success.
-                    } catch (e) { }
+                    } catch (e) {
+                        console.error(e);
+                    }
                 }
             }
             setSetupStep('ready');

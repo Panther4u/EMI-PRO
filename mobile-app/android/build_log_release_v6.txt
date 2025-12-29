@@ -1,0 +1,320 @@
+Starting a Gradle Daemon, 13 stopped Daemons could not be reused, use --status for details
+> Task :gradle-plugin:checkKotlinGradlePluginConfigurationErrors
+> Task :gradle-plugin:compileKotlin UP-TO-DATE
+> Task :gradle-plugin:compileJava NO-SOURCE
+> Task :gradle-plugin:pluginDescriptors UP-TO-DATE
+> Task :gradle-plugin:processResources UP-TO-DATE
+> Task :gradle-plugin:classes UP-TO-DATE
+> Task :gradle-plugin:jar UP-TO-DATE
+> Task :app:buildCodegenCLI SKIPPED
+> Task :app:generateCodegenSchemaFromJavaScript SKIPPED
+> Task :app:generateCodegenArtifactsFromSchema SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:generateReleaseBuildConfig
+> Task :app:javaPreCompileRelease
+> Task :app:checkReleaseAarMetadata
+
+> Task :app:createBundleReleaseJsAndAssets
+debug Reading Metro config from C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\metro.config.js
+warning: the transform cache was reset.
+                Welcome to Metro v0.76.9
+              Fast - Scalable - Integrated
+
+
+info Writing bundle output to:, android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle
+info Writing sourcemap output to:, android\app\build\intermediates\sourcemaps\react\release\index.android.bundle.packager.map
+info Done writing bundle output
+info Done writing sourcemap output
+info Copying 6 asset files
+info Done copying assets
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:2295:18: warning: the variable "DebuggerInternal" was not declared in function "__shouldPauseOnThrow"
+          typeof DebuggerInternal !== 'undefined' &&
+                 ^~~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:5982:7: warning: the variable "setTimeout" was not declared in function "logCapturedError"
+      setTimeout(function () {
+      ^~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:3951:108: warning: the variable "nativeFabricUIManager" was not declared in function "onChange"
+...lInstanceHandle ? (from && nativeFabricUIManager.setIsJSResponder(from.sta...
+                              ^~~~~~~~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:4563:21: warning: the variable "clearTimeout" was not declared in anonymous function " 101#"
+    cancelTimeout = clearTimeout;
+                    ^~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:8313:30: warning: the variable "__REACT_DEVTOOLS_GLOBAL_HOOK__" was not declared in anonymous function " 101#"
+  if ("undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__) {
+                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:10654:5: warning: the variable "setImmediate" was not declared in function "handleResolved"
+    setImmediate(function () {
+    ^~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:14903:12: warning: the variable "fetch" was not declared in anonymous function " 350#"
+    fetch: fetch,
+           ^~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:14904:14: warning: the variable "Headers" was not declared in anonymous function " 350#"
+    Headers: Headers,
+             ^~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:14905:14: warning: the variable "Request" was not declared in anonymous function " 350#"
+    Request: Request,
+             ^~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:14906:15: warning: the variable "Response" was not declared in anonymous function " 350#"
+    Response: Response
+              ^~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15063:24: warning: the variable "FileReader" was not declared in function "readBlobAsArrayBuffer"
+      var reader = new FileReader();
+                       ^~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15114:36: warning: the variable "Blob" was not declared in anonymous function " 361#"
+        } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+                                   ^~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15116:40: warning: the variable "FormData" was not declared in anonymous function " 361#"
+        } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+                                       ^~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15118:44: warning: the variable "URLSearchParams" was not declared in anonymous function " 361#"
+...e if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body...
+                                 ^~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15237:26: warning: the variable "AbortController" was not declared in anonymous function " 367#"
+          var ctrl = new AbortController();
+                         ^~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:15371:23: warning: the variable "XMLHttpRequest" was not declared in anonymous function " 371#"
+        var xhr = new XMLHttpRequest();
+                      ^~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:14916:71: warning: the variable "self" was not declared in anonymous function " 353#"
+...undefined' && globalThis || typeof self !== 'undefined' && self ||
+                                      ^~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:23668:27: warning: the variable "performance" was not declared in anonymous function " 646#"
+  if ("object" === typeof performance && "function" === typeof performance.no...
+                          ^~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:23691:26: warning: the variable "navigator" was not declared in anonymous function " 646#"
+  "undefined" !== typeof navigator && undefined !== navigator.scheduling && u...
+                         ^~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:23801:37: warning: the variable "MessageChannel" was not declared in anonymous function " 646#"
+  };else if ("undefined" !== typeof MessageChannel) {
+                                    ^~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:23816:34: warning: the variable "nativeRuntimeScheduler" was not declared in anonymous function " 646#"
+... = "undefined" !== typeof nativeRuntimeScheduler ? nativeRuntimeScheduler....
+                             ^~~~~~~~~~~~~~~~~~~~~~
+android\app\build\generated\assets\createBundleReleaseJsAndAssets\index.android.bundle:32989:34: warning: the variable "requestAnimationFrame" was not declared in function "start 9#"
+...    this._animationFrame = requestAnimationFrame(this.onUpdate.bind(this));
+                              ^~~~~~~~~~~~~~~~~~~~~
+
+> Task :app:generateReleaseResValues
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources
+> Task :app:packageReleaseResources
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :app:parseReleaseLocalResources
+> Task :app:mergeReleaseResources
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :app:extractProguardFiles
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:processReleaseManifestForPackage
+> Task :app:mergeReleaseArtProfile
+> Task :app:mergeReleaseNativeLibs
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:processReleaseResources
+> Task :app:stripReleaseDebugSymbols
+> Task :app:mergeReleaseJavaResource
+
+> Task :app:compileReleaseJavaWithJavac
+Note: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\java\com\securefinance\emilock\DeviceAdminReceiver.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:expandReleaseArtProfileWildcards
+> Task :app:mergeReleaseGeneratedProguardFiles
+> Task :app:extractReleaseNativeSymbolTables
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets
+
+> Task :app:minifyReleaseWithR8
+Supplied proguard configuration does not exist: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\proguard-rules.pro
+
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:validateSigningRelease
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :react-native-async-storage_async-storage:preBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:preReleaseBuild UP-TO-DATE
+> Task :react-native-async-storage_async-storage:mergeReleaseJniLibFolders
+> Task :react-native-async-storage_async-storage:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-async-storage_async-storage:stripReleaseDebugSymbols NO-SOURCE
+> Task :react-native-async-storage_async-storage:generateReleaseResValues
+> Task :react-native-async-storage_async-storage:extractDeepLinksForAarRelease
+> Task :react-native-async-storage_async-storage:copyReleaseJniLibsProjectAndLocalJars
+> Task :react-native-async-storage_async-storage:generateReleaseBuildConfig
+> Task :react-native-async-storage_async-storage:generateReleaseResources
+> Task :react-native-async-storage_async-storage:packageReleaseResources
+> Task :react-native-async-storage_async-storage:parseReleaseLocalResources
+> Task :react-native-async-storage_async-storage:javaPreCompileRelease
+
+> Task :react-native-async-storage_async-storage:processReleaseManifest
+package="com.reactnativecommunity.asyncstorage" found in source AndroidManifest.xml: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.reactnativecommunity.asyncstorage" from the source AndroidManifest.xml: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native-async-storage\async-storage\android\src\main\AndroidManifest.xml.
+
+> Task :react-native-async-storage_async-storage:mergeReleaseShaders
+> Task :react-native-async-storage_async-storage:compileReleaseShaders NO-SOURCE
+> Task :react-native-async-storage_async-storage:generateReleaseAssets UP-TO-DATE
+> Task :react-native-async-storage_async-storage:generateReleaseRFile
+> Task :app:optimizeReleaseResources
+> Task :react-native-async-storage_async-storage:extractReleaseAnnotations
+
+> Task :react-native-async-storage_async-storage:compileReleaseJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\@react-native-async-storage\async-storage\android\src\javaPackage\java\com\reactnativecommunity\asyncstorage\AsyncStoragePackage.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :react-native-async-storage_async-storage:mergeReleaseGeneratedProguardFiles
+> Task :react-native-async-storage_async-storage:mergeReleaseConsumerProguardFiles
+> Task :react-native-async-storage_async-storage:packageReleaseAssets
+> Task :react-native-async-storage_async-storage:prepareLintJarForPublish
+> Task :react-native-async-storage_async-storage:prepareReleaseArtProfile
+> Task :react-native-async-storage_async-storage:processReleaseJavaRes NO-SOURCE
+> Task :react-native-async-storage_async-storage:mergeReleaseJavaResource
+> Task :react-native-async-storage_async-storage:writeReleaseAarMetadata
+> Task :react-native-async-storage_async-storage:syncReleaseLibJars
+> Task :react-native-async-storage_async-storage:bundleReleaseAar
+> Task :react-native-async-storage_async-storage:mapReleaseSourceSetPaths
+> Task :app:lintVitalAnalyzeRelease
+> Task :react-native-async-storage_async-storage:mergeReleaseResources
+> Task :react-native-camera-kit:preBuild UP-TO-DATE
+> Task :react-native-camera-kit:preReleaseBuild UP-TO-DATE
+> Task :react-native-camera-kit:mergeReleaseJniLibFolders
+> Task :react-native-camera-kit:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-camera-kit:stripReleaseDebugSymbols NO-SOURCE
+> Task :react-native-camera-kit:copyReleaseJniLibsProjectAndLocalJars
+> Task :react-native-camera-kit:generateReleaseResValues
+> Task :react-native-camera-kit:extractDeepLinksForAarRelease
+> Task :react-native-camera-kit:generateReleaseBuildConfig
+> Task :react-native-camera-kit:generateReleaseResources
+> Task :react-native-camera-kit:packageReleaseResources
+> Task :react-native-camera-kit:parseReleaseLocalResources
+
+> Task :react-native-camera-kit:processReleaseManifest
+package="com.rncamerakit" found in source AndroidManifest.xml: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\react-native-camera-kit\android\src\main\AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="com.rncamerakit" from the source AndroidManifest.xml: C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\node_modules\react-native-camera-kit\android\src\main\AndroidManifest.xml.
+
+> Task :react-native-camera-kit:mergeReleaseShaders
+> Task :react-native-camera-kit:compileReleaseShaders NO-SOURCE
+> Task :react-native-camera-kit:generateReleaseAssets UP-TO-DATE
+> Task :react-native-camera-kit:generateReleaseRFile
+> Task :react-native-camera-kit:javaPreCompileRelease
+> Task :react-native-camera-kit:packageReleaseAssets
+> Task :react-native-async-storage_async-storage:verifyReleaseResources
+> Task :react-native-camera-kit:compileReleaseKotlin
+> Task :react-native-async-storage_async-storage:assembleRelease
+> Task :react-native-camera-kit:prepareReleaseArtProfile
+> Task :react-native-camera-kit:prepareLintJarForPublish
+> Task :react-native-camera-kit:writeReleaseAarMetadata
+> Task :react-native-camera-kit:mapReleaseSourceSetPaths
+> Task :app:lintVitalReportRelease
+> Task :react-native-camera-kit:mergeReleaseResources
+> Task :app:lintVitalRelease
+> Task :app:compileReleaseArtProfile
+> Task :react-native-gesture-handler:preBuild UP-TO-DATE
+> Task :react-native-gesture-handler:preReleaseBuild UP-TO-DATE
+> Task :react-native-gesture-handler:mergeReleaseJniLibFolders
+> Task :react-native-gesture-handler:mergeReleaseNativeLibs NO-SOURCE
+> Task :react-native-gesture-handler:stripReleaseDebugSymbols NO-SOURCE
+> Task :react-native-gesture-handler:generateReleaseResValues
+> Task :react-native-gesture-handler:extractDeepLinksForAarRelease
+> Task :react-native-gesture-handler:generateReleaseBuildConfig
+> Task :react-native-gesture-handler:generateReleaseResources
+> Task :react-native-gesture-handler:copyReleaseJniLibsProjectAndLocalJars
+> Task :react-native-gesture-handler:packageReleaseResources
+> Task :react-native-gesture-handler:processReleaseManifest
+> Task :react-native-gesture-handler:javaPreCompileRelease
+> Task :react-native-gesture-handler:parseReleaseLocalResources
+> Task :react-native-gesture-handler:mergeReleaseShaders
+> Task :react-native-gesture-handler:compileReleaseShaders NO-SOURCE
+> Task :react-native-gesture-handler:generateReleaseAssets UP-TO-DATE
+> Task :react-native-gesture-handler:generateReleaseRFile
+> Task :react-native-gesture-handler:packageReleaseAssets
+> Task :react-native-gesture-handler:prepareLintJarForPublish
+> Task :react-native-gesture-handler:prepareReleaseArtProfile
+> Task :react-native-gesture-handler:writeReleaseAarMetadata
+> Task :react-native-gesture-handler:mapReleaseSourceSetPaths
+> Task :react-native-camera-kit:verifyReleaseResources
+> Task :react-native-gesture-handler:mergeReleaseResources
+> Task :app:packageRelease
+> Task :react-native-safe-area-context:preBuild UP-TO-DATE
+> Task :react-native-safe-area-context:preReleaseBuild UP-TO-DATE
+> Task :react-native-safe-area-context:mergeReleaseJniLibFolders
+
+> Task :react-native-camera-kit:compileReleaseKotlin FAILED
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-camera-kit/android/src/main/java/com/rncamerakit/RNCameraKitPackage.kt:37:17 No value passed for parameter 'p6'
+
+> Task :react-native-safe-area-context:mergeReleaseNativeLibs NO-SOURCE
+> Task :app:createReleaseApkListingFileRedirect
+> Task :react-native-gesture-handler:compileReleaseKotlin
+> Task :react-native-gesture-handler:verifyReleaseResources
+
+> Task :react-native-gesture-handler:compileReleaseKotlin FAILED
+e: Supertypes of the following classes cannot be resolved. Please make sure you have the required dependencies in the classpath:
+    class com.facebook.react.viewmanagers.RNGestureHandlerButtonManagerInterface, unresolved supertypes: ViewManagerWithGeneratedInterface
+    class com.facebook.react.viewmanagers.RNGestureHandlerRootViewManagerInterface, unresolved supertypes: ViewManagerWithGeneratedInterface
+Adding -Xextended-compiler-checks argument might provide additional information.
+
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:3:27 Unresolved reference: BaseReactPackage
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:23:3 Unresolved reference: BaseReactPackage
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:36:3 'createViewManagers' overrides nothing
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:41:3 'getViewManagers' overrides nothing
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:47:3 'getModule' overrides nothing
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:54:3 'getReactModuleInfoProvider' overrides nothing
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/RNGestureHandlerPackage.kt:70:13 No value passed for parameter 'p6'
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.kt:40:1 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.kt:47:5 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.kt:47:107 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.kt:136:5 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerButtonViewManager.kt:141:71 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.kt:16:1 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.kt:23:5 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.kt:23:116 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager'. Check your module classpath for missing or conflicting dependencies
+e: file:///C:/Users/pnive/OneDrive/Desktop/EMI%20App/mobile-app/node_modules/react-native-gesture-handler/android/src/main/java/com/swmansion/gesturehandler/react/RNGestureHandlerRootViewManager.kt:26:79 Cannot access 'ViewManagerWithGeneratedInterface' which is a supertype of 'com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager'. Check your module classpath for missing or conflicting dependencies
+
+FAILURE: Build completed with 2 failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':react-native-camera-kit:compileReleaseKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task ':react-native-gesture-handler:compileReleaseKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+==============================================================================
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.7/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 6m 14s
+112 actionable tasks: 108 executed, 4 up-to-date

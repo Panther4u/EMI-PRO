@@ -1,0 +1,162 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.securefinance.emilock"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+12-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:5:5-79
+12-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:5:22-76
+13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+13-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:6:5-81
+13-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:6:22-78
+14    <uses-permission android:name="android.permission.CAMERA" />
+14-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:7:5-65
+14-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:7:22-62
+15    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+15-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:8:5-75
+15-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:8:22-72
+16    <uses-permission android:name="android.permission.READ_SMS" />
+16-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:9:5-67
+16-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:9:22-64
+17    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+17-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:10:5-70
+17-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:10:22-67
+18    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+18-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:11:5-77
+18-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:11:22-74
+19
+20    <!-- Critical for Lock Screen Control -->
+21    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+21-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:14:5-78
+21-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:14:22-75
+22    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+22-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:15:5-77
+22-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:15:22-74
+23    <uses-permission android:name="android.permission.WAKE_LOCK" />
+23-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:16:5-68
+23-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:16:22-65
+24
+25    <!-- Device Admin Permission -->
+26    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+26-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:19:5-76
+26-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:19:22-73
+27
+28    <application
+28-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:21:5-60:19
+29        android:name="com.securefinance.emilock.MainApplication"
+29-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:22:9-40
+30        android:allowBackup="false"
+30-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:26:9-36
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.7.0] C:\Users\pnive\.gradle\caches\transforms-4\a83fbeb00e0eff85fd65a429e32e9652\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+32        android:extractNativeLibs="true"
+33        android:icon="@drawable/ic_launcher"
+33-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:24:9-45
+34        android:label="SecureFinance EMI"
+34-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:23:9-42
+35        android:theme="@style/AppTheme" >
+35-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:25:9-40
+36        <activity
+36-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:28:9-39:20
+37            android:name="com.securefinance.emilock.MainActivity"
+37-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:29:13-41
+38            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+38-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:31:13-90
+39            android:exported="true"
+39-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:34:13-36
+40            android:label="SecureFinance EMI"
+40-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:30:13-46
+41            android:launchMode="singleTask"
+41-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:32:13-44
+42            android:windowSoftInputMode="adjustResize" >
+42-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:33:13-55
+43            <intent-filter>
+43-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:35:13-38:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:36:17-69
+44-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:36:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:37:17-77
+46-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:37:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <!-- Device Admin Receiver -->
+51        <receiver
+51-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:42:9-55:20
+52            android:name="com.securefinance.emilock.DeviceAdminReceiver"
+52-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:43:13-48
+53            android:description="@string/device_admin_description"
+53-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:45:13-67
+54            android:exported="true"
+54-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:47:13-36
+55            android:label="SecureFinance Device Admin"
+55-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:44:13-55
+56            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+56-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:46:13-70
+57            <meta-data
+57-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:48:13-50:56
+58                android:name="android.app.device_admin"
+58-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:49:17-56
+59                android:resource="@xml/device_admin" />
+59-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:50:17-53
+60
+61            <intent-filter>
+61-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:51:13-54:29
+62                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+62-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:52:17-82
+62-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:52:25-79
+63                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+63-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:53:17-83
+63-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:53:25-80
+64            </intent-filter>
+65        </receiver>
+66
+67        <!-- Lock Screen Service -->
+68        <service
+68-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:58:9-79
+69            android:name="com.securefinance.emilock.LockScreenService"
+69-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:58:18-51
+70            android:exported="false" />
+70-->C:\Users\pnive\OneDrive\Desktop\EMI App\mobile-app\android\app\src\main\AndroidManifest.xml:58:52-76
+71
+72        <provider
+72-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+73            android:name="androidx.startup.InitializationProvider"
+73-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+74            android:authorities="com.securefinance.emilock.androidx-startup"
+74-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+75            android:exported="false" >
+75-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+76            <meta-data
+76-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+77                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+77-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+78                android:value="androidx.startup" />
+78-->[androidx.emoji2:emoji2:1.0.0] C:\Users\pnive\.gradle\caches\transforms-4\b35c00d2a4192fcbaaef93ac1ab4cf4d\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+79            <meta-data
+79-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\pnive\.gradle\caches\transforms-4\652b44a245eb0dbd1843d81fdb32448d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+80                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+80-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\pnive\.gradle\caches\transforms-4\652b44a245eb0dbd1843d81fdb32448d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+81                android:value="androidx.startup" />
+81-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\pnive\.gradle\caches\transforms-4\652b44a245eb0dbd1843d81fdb32448d\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+82        </provider>
+83
+84        <meta-data
+84-->[com.facebook.soloader:soloader:0.10.5] C:\Users\pnive\.gradle\caches\transforms-4\ae8e5250129b4b1fcf026f885baa256b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:12:9-14:37
+85            android:name="com.facebook.soloader.enabled"
+85-->[com.facebook.soloader:soloader:0.10.5] C:\Users\pnive\.gradle\caches\transforms-4\ae8e5250129b4b1fcf026f885baa256b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:13:13-57
+86            android:value="false" />
+86-->[com.facebook.soloader:soloader:0.10.5] C:\Users\pnive\.gradle\caches\transforms-4\ae8e5250129b4b1fcf026f885baa256b\transformed\jetified-soloader-0.10.5\AndroidManifest.xml:14:13-34
+87    </application>
+88
+89</manifest>

@@ -8,7 +8,7 @@ interface AuditLog {
     detail: string;
 }
 
-interface AdminAccount {
+export interface AdminAccount {
     id: string;
     username: string;
     pin: string;
@@ -35,7 +35,7 @@ interface AuthContextType {
     toggleAdminLock: (locked: boolean) => void;
     incrementCustomerCount: (adminId: string) => void;
     canCreateCustomer: (adminId: string) => boolean;
-    addLog: (action: string, detail: string, specificRole?: 'admin' | 'guest') => void;
+    addLog: (action: string, detail: string, specificRole?: 'admin' | 'super-admin' | 'guest') => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -88,13 +88,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         localStorage.setItem('adminAccounts', JSON.stringify(admins));
     }, [admins]);
 
-    const addLog = (action: string, detail: string, specificRole?: 'admin' | 'guest') => {
+    const addLog = (action: string, detail: string, specificRole?: 'admin' | 'super-admin' | 'guest') => {
         const currentRole = specificRole || 'admin';
         const newLog: AuditLog = {
             id: Math.random().toString(36).substr(2, 9),
             timestamp: new Date().toISOString(),
             action,
-            role: currentRole as any,
+            role: currentRole,
             detail
         };
         setLogs(prevLogs => {

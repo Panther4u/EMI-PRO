@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function SettingsScreen({ navigation }) {
+export default function SettingsScreen({ navigation }: { navigation: any }) {
     const handleLogout = () => {
         Alert.alert(
             "Unenroll Device",
@@ -53,12 +53,44 @@ export default function SettingsScreen({ navigation }) {
                     <Text style={[styles.itemValue, { color: '#4CAF50' }]}>Active</Text>
                 </View>
                 <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Network Access</Text>
+                    <Text style={styles.itemValue}>Restricted</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>WiFi Access</Text>
+                    <Text style={styles.itemValue}>Restricted</Text>
+                </View>
+                <View style={styles.item}>
                     <Text style={styles.itemLabel}>Camera Policy</Text>
                     <Text style={styles.itemValue}>Enforced</Text>
                 </View>
                 <View style={styles.item}>
-                    <Text style={styles.itemLabel}>Locking Policy</Text>
-                    <Text style={styles.itemValue}>Enforced</Text>
+                    <Text style={styles.itemLabel}>Calls & SMS</Text>
+                    <Text style={styles.itemValue}>Restricted</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Notifications</Text>
+                    <Text style={styles.itemValue}>Blocked</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Power Options</Text>
+                    <Text style={styles.itemValue}>Restricted</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Reset Policy</Text>
+                    <Text style={styles.itemValue}>Restricted</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>PIN Modification</Text>
+                    <Text style={styles.itemValue}>Disabled</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Location Privacy</Text>
+                    <Text style={styles.itemValue}>Managed</Text>
+                </View>
+                <View style={styles.item}>
+                    <Text style={styles.itemLabel}>Airplane Mode</Text>
+                    <Text style={styles.itemValue}>Disabled</Text>
                 </View>
             </View>
 

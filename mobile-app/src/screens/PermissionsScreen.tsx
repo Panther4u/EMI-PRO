@@ -4,7 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const { DeviceLockModule } = NativeModules;
 
-export default function PermissionsScreen({ route, navigation }) {
+export default function PermissionsScreen({ route, navigation }: { route: any, navigation: any }) {
     const { enrollmentData } = route.params;
 
     const requestAdmin = async () => {
@@ -32,7 +32,7 @@ export default function PermissionsScreen({ route, navigation }) {
                     }
                 }
             ]);
-        } catch (error) {
+        } catch (error: any) {
             Alert.alert('Error', 'Failed to enable admin: ' + error.message);
         }
     };

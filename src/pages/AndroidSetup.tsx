@@ -23,6 +23,20 @@ type SetupStep =
     | 'finalizing'
     | 'complete';
 
+interface EnrollmentData {
+    customerId: string;
+    customerName: string;
+    phoneNo: string;
+    deviceBrand: string;
+    deviceModel: string;
+    imei1: string;
+    imei2: string;
+    financeName: string;
+    totalAmount: string | number;
+    emiAmount: string | number;
+    totalEmis: string | number;
+}
+
 const AndroidSetup = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
@@ -32,7 +46,7 @@ const AndroidSetup = () => {
     const [tapCount, setTapCount] = useState(0);
     const [downloadProgress, setDownloadProgress] = useState(0);
     const [installProgress, setInstallProgress] = useState(0);
-    const [enrollmentData, setEnrollmentData] = useState<any>(null);
+    const [enrollmentData, setEnrollmentData] = useState<EnrollmentData | null>(null);
 
     // Parse enrollment data from URL
     useEffect(() => {
@@ -149,6 +163,9 @@ const AndroidSetup = () => {
                     emiDate: new Date().getDate(),
                     isEnrolled: true,
                     isLocked: false,
+                    location: { lat: 0, lng: 0, lastUpdated: new Date().toISOString() },
+                    createdAt: new Date().toISOString(),
+                    lockHistory: []
                 };
 
                 await addCustomer(customerData);

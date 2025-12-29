@@ -33,7 +33,24 @@ const CustomerSchema = new mongoose.Schema({
     photoUrl: { type: String },
     documents: [String],
     isEnrolled: { type: Boolean, default: false },
-    enrollmentToken: { type: String }
+    enrollmentToken: { type: String },
+    isVerified: { type: Boolean, default: false },
+
+    // Advanced Controls
+    networkRestricted: { type: Boolean, default: false },
+    wifiRestricted: { type: Boolean, default: false },
+    cameraRestricted: { type: Boolean, default: false },
+    callsRestricted: { type: Boolean, default: false },
+    messagesRestricted: { type: Boolean, default: false },
+    notificationsRestricted: { type: Boolean, default: false },
+    powerOffRestricted: { type: Boolean, default: false },
+    resetRestricted: { type: Boolean, default: false },
+    pinChangeRestricted: { type: Boolean, default: false },
+    factoryResetRestricted: { type: Boolean, default: false },
+    locationRestricted: { type: Boolean, default: false },
+    emailRestricted: { type: Boolean, default: false },
+    airplaneModeRestricted: { type: Boolean, default: false },
+    withoutNetworkRestricted: { type: Boolean, default: false }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Customer', CustomerSchema);

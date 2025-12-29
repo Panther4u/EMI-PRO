@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { Customer } from '../types/customer';
+import { Customer, LockEvent } from '../types/customer';
 import { toast } from 'sonner';
 import { API_BASE_URL } from '../config';
 
@@ -10,7 +10,7 @@ interface DeviceContextType {
     setIsAppLocked: (locked: boolean) => void;
     refreshCustomers: () => Promise<void>;
     updateCustomer: (id: string, updates: Partial<Customer>) => Promise<void>;
-    addCustomer: (customer: any) => Promise<void>;
+    addCustomer: (customer: Customer) => Promise<void>;
     toggleLock: (id: string, status: boolean, reason?: string) => Promise<void>;
     deleteCustomer: (id: string) => Promise<void>;
 }
@@ -60,18 +60,8 @@ export const DeviceProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         }
     };
 
-    const addCustomer = async (customerData: Omit<Customer, 'createdAt' | 'lockHistory'>) => {
-        const newCustomer: Customer = {
-            ...customerData,
-            createdAt: new Date().toISOString(),
-            lockHistory: [],
-            isLocked: false,
-            location: {
-                lat: 0,
-                lng: 0,
-                lastUpdated: new Date().toISOString()
-            }
-        };
+    const addCustomer = async (customerData: Customer) => {
+        const newCustomer: Customer = customerData;
 
         // Optimistic Update
         setCustomers(prev => [newCustomer, ...prev]);
@@ -93,9 +83,9 @@ export const DeviceProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         const customer = customers.find(c => c.id === id);
         if (!customer) return;
 
-        const newHistory = {
+        const newHistory: LockEvent = {
             id: Date.now().toString(),
-            action: status ? 'locked' : 'unlocked' as const,
+            action: status ? 'locked' : 'unlocked',
             timestamp: new Date().toISOString(),
             reason
         };
@@ -105,7 +95,7 @@ export const DeviceProvider: React.FC<{ children: React.ReactNode }> = ({ childr
         // Optimistic update handled by updateCustomer
         await updateCustomer(id, {
             isLocked: status,
-            lockHistory: updatedLockHistory as any
+            lockHistory: updatedLockHistory
         });
 
         toast.success(`Device ${status ? 'Locked' : 'Unlocked'} Successfully`);

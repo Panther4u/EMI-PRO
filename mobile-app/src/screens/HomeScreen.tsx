@@ -1,7 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function HomeScreen({ setIsLocked }) {
+interface Props {
+    setIsLocked: (locked: boolean) => void;
+}
+
+export default function HomeScreen({ setIsLocked }: Props) {
     // In a real app, this would check backend status regularly
     // For demo, we just have a button to toggle lock
 

@@ -17,7 +17,14 @@ import {
   Shield,
   Smartphone,
   ChevronLeft,
-  Phone
+  Phone,
+  MessageSquare,
+  Key,
+  ShieldAlert,
+  Mail,
+  Plane,
+  Radio,
+  type LucideIcon
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useToast } from '@/hooks/use-toast';
@@ -28,7 +35,7 @@ interface LockControlPanelProps {
   onUpdateCustomer: (id: string, updates: Partial<Customer>) => void;
 }
 
-const FeatureToggle = ({ icon: Icon, label, isActive, onClick }: { icon: any, label: string, isActive: boolean, onClick: () => void }) => (
+const FeatureToggle = ({ icon: Icon, label, isActive, onClick }: { icon: LucideIcon, label: string, isActive: boolean, onClick: () => void }) => (
   <button
     onClick={onClick}
     className={cn(
@@ -163,6 +170,12 @@ export const LockControlPanel = ({ customers, onLockToggle, onUpdateCustomer }: 
                       onClick={() => onUpdateCustomer(customer.id, { callsRestricted: !customer.callsRestricted })}
                     />
                     <FeatureToggle
+                      icon={MessageSquare}
+                      label="Messages"
+                      isActive={!customer.messagesRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { messagesRestricted: !customer.messagesRestricted })}
+                    />
+                    <FeatureToggle
                       icon={AlertTriangle}
                       label="Notif."
                       isActive={!customer.notificationsRestricted}
@@ -179,6 +192,42 @@ export const LockControlPanel = ({ customers, onLockToggle, onUpdateCustomer }: 
                       label="Reset"
                       isActive={!customer.resetRestricted}
                       onClick={() => onUpdateCustomer(customer.id, { resetRestricted: !customer.resetRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={Key}
+                      label="PIN Change"
+                      isActive={!customer.pinChangeRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { pinChangeRestricted: !customer.pinChangeRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={ShieldAlert}
+                      label="Fact. Reset"
+                      isActive={!customer.factoryResetRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { factoryResetRestricted: !customer.factoryResetRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={MapPin}
+                      label="Location"
+                      isActive={!customer.locationRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { locationRestricted: !customer.locationRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={Mail}
+                      label="Email"
+                      isActive={!customer.emailRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { emailRestricted: !customer.emailRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={Plane}
+                      label="Airplane"
+                      isActive={!customer.airplaneModeRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { airplaneModeRestricted: !customer.airplaneModeRestricted })}
+                    />
+                    <FeatureToggle
+                      icon={Radio}
+                      label="No Net"
+                      isActive={!customer.withoutNetworkRestricted}
+                      onClick={() => onUpdateCustomer(customer.id, { withoutNetworkRestricted: !customer.withoutNetworkRestricted })}
                     />
                   </div>
 
